@@ -1,0 +1,12 @@
+/*
+ * 左右相對滾動條固定插件樣式表
+ * @author      yulei@addcn.com
+ * @version     1.0
+ * @copyRight   2010-2014 Addcn
+ * @updateTime  2014-02-24
+ */
+
+ /*插件固定樣式-不可更改*/
+.fixed_wrap{ position:fixed; z-index:99990;-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}/*低於彈窗的遮罩99991*/
+a.closeBtn{ font-size:18px; position:absolute; right:5px; top:5px; z-index:99990; cursor:pointer;}
+a.closeBtn:hover{ color:#f00; text-decoration:none;}

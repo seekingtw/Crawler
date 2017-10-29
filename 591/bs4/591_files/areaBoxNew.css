@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/**
+ * 區域切換選擇框
+ * @author      yulei@addcn.com
+ * @updatetime  2017-01-16
+*/
+.areabox-wrapper {
+  width: 500px;
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  z-index: 99;
+  background: #fff;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  display: none;
+  text-align: left;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 3px 6px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 3px 6px;
+}
+.areabox-wrapper .dropbox-arrow {
+  width: 24px;
+  height: 12px;
+  background: url(/static/public/images/header/arrow.png) no-repeat;
+  position: absolute;
+  right: 458px;
+  top: -11px;
+  z-index: 9;
+}
+.areabox-wrapper h3 {
+  font-size: 15px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.areabox-wrapper h3:hover {
+  color: #f60;
+}
+.areabox-wrapper dl dt {
+  width: 50px;
+  float: left;
+  height: 32px;
+  line-height: 32px;
+  color: #333;
+}
+.areabox-wrapper dl dd {
+  width: 405px;
+  float: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 22px;
+}
+.areabox-wrapper dl dd a {
+  display: inline-block;
+  margin-right: 15px;
+  color: #555;
+}
+.areabox-wrapper dl dd a:visited {
+  color: #555;
+}
+.areabox-wrapper dl dd a:focus {
+  color: #555;
+}
+.areabox-wrapper dl dd a:hover {
+  color: #f60;
+}
+.areabox-wrapper dl dd a:active {
+  color: #555;
+}
+.areabox-wrapper dl dd a.active {
+  color: #f60;
+}
+.areabox-wrapper dl dd a:hover {
+  text-decoration: underline;
+}
+.areabox-wrapper dl dd a:last-of-type {
+  margin-right: 0;
+}
+
+/*# sourceMappingURL=areaBoxNew.css.map */
