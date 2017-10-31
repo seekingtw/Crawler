@@ -1,0 +1,411 @@
+@charset "UTF-8";
+/**
+ * 側邊工具欄組件
+ * @author      yulei@addcn.com
+ * @updatetime  2017-01-31
+*/
+.side_tool_wrap {
+  width: 35px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-right: 3px solid #858384;
+  text-align: center;
+  display: none;
+  z-index: 999;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.side_tool_wrap .cursor {
+  cursor: pointer;
+}
+.side_tool_wrap .side_tool {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  margin-top: -114px;
+}
+.side_tool_wrap .side_tool ul li {
+  margin-bottom: 3px;
+  position: relative;
+  background: #858384;
+}
+.side_tool_wrap .side_tool ul li.active a, .side_tool_wrap .side_tool ul li.active .collect {
+  background-color: #f60;
+}
+.side_tool_wrap .side_tool ul li a {
+  display: block;
+  width: 35px;
+  height: 35px;
+  background: url("/static/public/component/images/side_icon.png");
+}
+.side_tool_wrap .side_tool ul li a.historyList {
+  background-position: 0 -160px;
+}
+.side_tool_wrap .side_tool ul li a.collectionList {
+  background-position: 0 -98px;
+}
+.side_tool_wrap .side_tool ul li a.qrcode {
+  background-position: 0 -65px;
+}
+.side_tool_wrap .side_tool ul li a.proposal {
+  background-position: 0 -2px;
+}
+.side_tool_wrap .side_tool ul li a.online {
+  background-position: 0 -134px;
+}
+.side_tool_wrap .side_tool ul li a.addCollec {
+  background-position: 0 -191px;
+}
+.side_tool_wrap .side_tool ul li a.backtop {
+  background-position: 0 -32px;
+}
+.side_tool_wrap .side_tool ul li .side-show {
+  position: absolute;
+  right: 48px;
+  top: 0;
+  opacity: 0;
+  display: none;
+}
+.side_tool_wrap .side_tool ul li .side-txt {
+  padding: 0 14px;
+  color: #fff;
+  font-size: 12px;
+  background: #666666;
+  white-space: nowrap;
+  height: 35px;
+  line-height: 35px;
+}
+.side_tool_wrap .side_tool ul li .side-txt i {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  margin: -5px -10px 0 0;
+  font-size: 0;
+  border: 5px solid;
+  border-color: transparent transparent transparent #666666;
+  overflow: hidden;
+}
+.side_tool_wrap .side_tool ul li .side_img {
+  width: 140px;
+  height: 172px;
+  top: -130px;
+}
+.side_tool_wrap .side_tool .qrcode_img {
+  position: absolute;
+  left: -91px;
+  top: 34px;
+  display: none;
+}
+
+
+@charset "UTF-8";
+/* 
+** 作者：蒋文彬
+** 时间：2016/11/03
+*/
+.record-body {
+  position: fixed;
+  top: 0;
+  right: -270px;
+  height: 100%;
+  background: #f5f5f5;
+  z-index: 999;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: none;
+  text-align: left;
+}
+.record-body a,
+.record-body a:hover {
+  color: #7e9ce1;
+  text-decoration: none;
+}
+.record-body .record-wrap {
+  position: relative;
+  width: 100%;
+}
+.record-body .record-wrap .record-header {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 16px;
+  padding-left: 20px;
+}
+.record-body .record-wrap .record-header .record-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+.record-body .record-wrap .record-header .record-close {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  cursor: pointer;
+  z-index: 99;
+}
+.record-body .record-wrap .record-tab {
+  display: none;
+  background: #f5f5f5;
+  height: 50px;
+  margin: 30px 0;
+}
+.record-body .record-wrap .record-tab .record-tab-item {
+  float: left;
+  background: #fff;
+  width: 33%;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+.record-body .record-wrap .record-tab .record-tab-item:hover {
+  color: #ff6e00;
+}
+.record-body .record-wrap .record-list {
+  margin-left: 10px;
+  margin-right: 13px;
+  padding-bottom: 48px;
+}
+.record-body .record-wrap .record-list .record-list-a {
+  background: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  display: block;
+}
+.record-body .record-wrap .record-list .record-list-a .record-list-up {
+  position: relative;
+}
+.record-body .record-wrap .record-list .record-list-a .record-list-up .record-list-img {
+  width: 210px;
+  height: 158px;
+}
+.record-body .record-wrap .record-list .record-list-a .record-list-up .record-list-nums {
+  background: url(../images/imgBox.png) no-repeat;
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 170px;
+  font-size: 12px;
+  color: #fff;
+  padding-left: 23px;
+  line-height: 20px;
+  font-style: normal;
+}
+.record-body .record-wrap .record-list .record-list-a .record-list-ctx {
+  font-size: 15px;
+  margin: 15px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.record-body .record-wrap .record-list .record-list-a .record-list-down {
+  position: relative;
+}
+.record-body .record-wrap .record-list .record-list-a .record-list-down .record-list-money {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+.record-body .record-wrap .record-list .record-list-a .record-list-down .record-list-unit {
+  color: #000;
+  font-size: 13px;
+}
+.record-body .record-wrap .record-list .record-list-a .record-list-down .record-list-colle {
+  width: 22px;
+  height: 19px;
+  background: url(../images/historyColle.png);
+  position: absolute;
+  right: 0;
+}
+.record-body .record-wrap .record-list .record-list-a .record-list-down .record-list-colleNo {
+  width: 22px;
+  height: 19px;
+  background: url(../images/historyColle2.png);
+  position: absolute;
+  right: 0;
+}
+.record-body .record-wrap .record-list .record-list-a .record-list-del {
+  background: url(../images/historyDel.png) no-repeat;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -8px;
+  right: -8px;
+  display: none;
+}
+.record-body .record-wrap .record-list .record-list-a:hover .record-list-del {
+  display: block;
+}
+.record-body .record-wrap .record-bottom {
+  border: 1px solid #ddd;
+  width: 230px;
+  height: 50px;
+  background: #fff;
+  font-size: 16px;
+  margin-left: 10px;
+  text-align: center;
+  line-height: 50px;
+}
+.record-body .record-wrap .record-bottom:hover {
+  background: #eee;
+  cursor: pointer;
+}
+.record-body .record-wrap .record-colle-bottom {
+  border: 1px solid #ddd;
+  width: 258px;
+  height: 50px;
+  background: #fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+  position: fixed;
+  bottom: 0;
+  display: block;
+}
+.record-body .record-wrap .record-colle-bottom a {
+  display: block;
+}
+.record-body .record-wrap .record-colle-bottom:hover {
+  background: #eee;
+  cursor: pointer;
+}
+.record-body .record-wrap .record-empty {
+  display: none;
+}
+.record-body .record-wrap .record-empty .record-empty-img {
+  width: 160px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.record-body .record-wrap .record-empty .record-empty-txt {
+  font-size: 16px;
+  color: #999;
+  margin: 15px auto 40px auto;
+  text-align: center;
+}
+.record-body .record-wrap .record-empty .record-empty-close {
+  width: 160px;
+  height: 50px;
+  font-size: 16px;
+  color: #000;
+  background: #fff;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 50px;
+  border: 1px solid #ddd;
+}
+.record-body .record-wrap .record-empty .record-empty-close:hover {
+  background: #eee;
+  cursor: pointer;
+}
+.record-body .record-wrap .record-colle-empty {
+  display: none;
+}
+.record-body .record-wrap .record-colle-empty .colle-empty-img {
+  background: url(../images/colleEmpty.png) no-repeat;
+  width: 160px;
+  height: 120px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.record-body .record-wrap .record-colle-empty .colle-empty-txt {
+  font-size: 16px;
+  color: #999;
+  margin: 15px auto 40px auto;
+  text-align: center;
+}
+.record-body .record-wrap .record-colle-empty .colle-empty-close {
+  width: 160px;
+  height: 50px;
+  font-size: 16px;
+  color: #000;
+  background: #fff;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 50px;
+  border: 1px solid #ddd;
+}
+.record-body .record-wrap .record-colle-empty .colle-empty-close:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+.record-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.record-body::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+.record-body::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: #7b6f6f;
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  margin-left: 0 !important;
+  width: 258px !important;
+}
+
+.record-tab-on {
+  border-bottom: 2px solid #ff6e00;
+}
+
+#j_popbox_colle .record-pop-first {
+  width: 200px;
+  margin: 30px auto;
+}
+#j_popbox_colle .record-pop-first .record-pop-success {
+  font-size: 18px;
+  color: #123;
+  margin-right: 10px;
+}
+#j_popbox_colle .record-pop-first .record-pop-more {
+  font-size: 18px;
+}
+#j_popbox_colle .record-pop-second {
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 15px;
+}
+#j_popbox_colle .record-pop-third .record-pop-login {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  width: 110px;
+  text-align: center;
+  margin-left: 100px;
+  cursor: pointer;
+  border-radius: 3px;
+  display: block;
+}
+#j_popbox_colle .record-pop-third .record-pop-login:hover {
+  background: #f78b26;
+  color: #fff;
+}
+#j_popbox_colle .record-pop-third .record-pop-stay {
+  float: right;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  width: 110px;
+  text-align: center;
+  margin-right: 100px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+#j_popbox_colle .record-pop-third .record-pop-stay:hover {
+  background: #f78b26;
+  color: #fff;
+}
