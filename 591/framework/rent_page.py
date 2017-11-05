@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from pandas import DataFrame
 import re
+from pandas_db import *
 
     
     
@@ -69,7 +70,9 @@ def pager(pageSource,db,start=None,end=None):
         price=each.find('div',attrs={'class':'price'}).i.text
         link= each.a.attrs['href']
         link=re.sub(u'//','https://',link);
-        pic=image_src= each.img.attrs['src']
+        #pic=image_src= each.img.attrs['src']
+        pic=image_src= each.img.attrs['data-original']
+        #print pic
         
         ## handle floor/area/type
         physical_info =each.find_all('p',attrs={'class':'lightBox'})

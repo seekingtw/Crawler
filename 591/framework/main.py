@@ -10,6 +10,8 @@ main control
 from selenium import webdriver
 import time
 import rent_page
+import item_page
+from pandas_db import *
 from pandas import DataFrame
 
 def start(browser):
@@ -41,7 +43,7 @@ def trace_pages(browser,pager,db, times=-1) :
         
         next_page = browser.find_element_by_css_selector("a.pageNext")
         next_page.click();
-        time.sleep(5)
+        time.sleep(7)
         elements = browser.find_elements_by_css_selector("ul.listInfo.clearfix p.lightBox em")
         if elements[0] == previous_check :
             break
@@ -52,25 +54,40 @@ def trace_pages(browser,pager,db, times=-1) :
             return 0
         
         page_count=page_count+1
-        
+    print "done %d pages" % page_count
     return 0
     pass
 
-class Db :
-    def __init__(self):
-        self.pd= DataFrame()
-        
-    def append(self,dataframe):
-        self.pd=self.pd.append(dataframe)        
-        
-    def to_excel(self, name,sheet_name='Sheet1'):
-        self.pd.to_excel(name, sheet_name='Sheet1')
+def trace_items(browser,db,times=-1):
+    db_item=Db("item")
+    item_len=len(db.pd)
+    count=0
+    for each_link in db.pd['link']:
+        print "%d in %d " % (count ,item_len)
+        count+=1
+        #print each
+        times-=1
+        browser.get(each_link)
+        time.sleep(2)
+        item_page.process_item_page(db_item,browser.page_source,each_link)
+        if times ==0 : break
+    db_item.to_excel()
+    pass
 
-browser=webdriver.Firefox()
-timestamp=time.strftime("%a-%b-%d-%H_%M_%S-%Y", time.localtime()) 
+
+
+#browser=webdriver.Firefox()
+browser=webdriver.Chrome()
+
 start(browser)
-db =Db()
+db =Db("list")
+#db_item=Db()
 
 trace_pages(browser,rent_page.pager,db)
+
+trace_items(browser,db)
+#wait=input("type to continue")
 browser.quit()
-db.to_excel(timestamp+'.xlsx')
+db.to_excel()
+#db_item.to_excel(timestamp+'_item.xlsx')
+
