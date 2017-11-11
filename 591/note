@@ -1,7 +1,0 @@
-selenium note
-
-1. use xpath than css selector....=> sometimes css selector seems strange 
-2. use explicit wait or time.sleep, implicit wait sometimes strange.
-
-beautiful soup.
-1. print soup.prettify to show data. # something encode is strage to show wrong string....

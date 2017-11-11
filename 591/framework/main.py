@@ -22,7 +22,9 @@ def start(browser):
     area=browser.find_element_by_css_selector('.pull-left[data-id="3"]')
     area.click()
     time.sleep(1)
-    county=browser.find_element_by_xpath('//*[@id="optionBox"]/li[1]/label/span')
+    #county=browser.find_element_by_xpath('//*[@id="optionBox"]/li[1]/label/span')#banqiao
+    #county=browser.find_element_by_xpath('//*[@id="optionBox"]/li[9]/label/span')#tucheng
+    county=browser.find_element_by_xpath('//*[@id="optionBox"]/li[4]/label/span')#xinzhong
     county.click()
     time.sleep(1)
 
@@ -59,7 +61,8 @@ def trace_pages(browser,pager,db, times=-1) :
     pass
 
 def trace_items(browser,db,times=-1):
-    db_item=Db("item")
+    #db_item=Db("tucheng-item")
+    db_item=Db("xinzhong-item")
     item_len=len(db.pd)
     count=0
     for each_link in db.pd['link']:
@@ -69,25 +72,26 @@ def trace_items(browser,db,times=-1):
         times-=1
         browser.get(each_link)
         time.sleep(2)
-        item_page.process_item_page(db_item,browser.page_source,each_link)
+        item_page.process_item_page(db_item,browser.page_source,each_link,browser=browser)
         if times ==0 : break
     db_item.to_excel()
     pass
 
 
-
-#browser=webdriver.Firefox()
-browser=webdriver.Chrome()
-
-start(browser)
-db =Db("list")
-#db_item=Db()
-
-trace_pages(browser,rent_page.pager,db)
-
-trace_items(browser,db)
-#wait=input("type to continue")
-browser.quit()
-db.to_excel()
-#db_item.to_excel(timestamp+'_item.xlsx')
+if __name__ == "__main__":
+    #browser=webdriver.Firefox()
+    browser=webdriver.Chrome()
+    
+    start(browser)
+    #db =Db("tucheng-list")
+    db =Db('xinzhong-list')
+    #db_item=Db()
+    
+    trace_pages(browser,rent_page.pager,db)
+    
+    trace_items(browser,db)
+    #wait=input("type to continue")
+    browser.quit()
+    db.to_excel()
+    #db_item.to_excel(timestamp+'_item.xlsx')
 
